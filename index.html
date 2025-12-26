@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWOT Analysis - Learning Management System (LMS)</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #2c3e50;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        .swot-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .swot-table td {
+            padding: 25px;
+            vertical-align: top;
+            border: 2px solid #2c3e50;
+            line-height: 1.6;
+        }
+        .strengths {
+            background-color: #e8f5e9;
+        }
+        .weaknesses {
+            background-color: #ffebee;
+        }
+        .opportunities {
+            background-color: #e3f2fd;
+        }
+        .threats {
+            background-color: #fff3e0;
+        }
+        h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.5em;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            padding-left: 5px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        .symbol {
+            font-size: 1.3em;
+            margin-right: 8px;
+        }
+        
+        /* Functional Requirements Styling */
+        .fr-header {
+            margin-top: 50px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #2c3e50;
+            color: #2c3e50;
+        }
+        .fr-table {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        .fr-table th {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: 600;
+        }
+        .role-header {
+            background-color: #e9ecef !important;
+            color: #2c3e50 !important;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .category-header {
+            background-color: #f8f9fa !important;
+            color: #495057 !important;
+            font-weight: 600;
+        }
+        .fr-summary {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 5px solid #2c3e50;
+        }
+        .summary-table th {
+            background-color: #495057;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SWOT ANALYSIS - Learning Management System (LMS)</h1>
+            <div class="subtitle">A comprehensive internal and external analysis for the LMS project</div>
+        </div>
+
+        <table class="swot-table">
+            <tr>
+                <td class="strengths">
+                    <h2><span class="symbol">✅</span> STRENGTHS <br><small>(Internal – What we do well)</small></h2>
+                    <ul>
+                        <li>User-friendly interface – Designed for easy navigation for students, teachers, and admins</li>
+                        <li>Multi-role dashboards – Tailored views and functionalities for students, teachers, and admins</li>
+                        <li>Comprehensive LMS features – Includes courses, assignments, quizzes, grades, and progress tracking</li>
+                        <li>Modular content delivery – Organized into structured modules for focused learning</li>
+                        <li>Integrated AI chatbot – Provides instant student support and handles FAQs</li>
+                        <li>Responsive design – Accessible on both desktop and mobile browsers</li>
+                        <li>Automated notifications – Sends email and SMS reminders for assignments, grades, and deadlines</li>
+                        <li>Modern integrations – Email (PHPMailer), SMS, AI chatbot, and payment systems integrated</li>
+                        <li>Payment and enrollment tracking – Built-in transaction and enrollment management</li>
+                        <li>User engagement tools – Ratings, reviews, messaging, and notifications improve interaction</li>
+                        <li>Content variety – Supports videos, PDFs, documents, and various file types</li>
+                        <li>Progress tracking and analytics – Students monitor progress; teachers/admins get performance insights</li>
+                        <li>E-certificates – Rewards learners and motivates course completion</li>
+                        <li>Monetization ready – Payment processing for course fees and premium modules</li>
+                        <li>Organized team structure – Clear role assignments and task delegation</li>
+                        <li>RESTful API architecture – Enables integration with partner systems and future scalability</li>
+                    </ul>
+                </td>
+                <td class="weaknesses">
+                    <h2><span class="symbol">❌</span> WEAKNESSES <br><small>(Internal – What needs improvement)</small></h2>
+                    <ul>
+                        <li>Limited real-time collaboration – No live video sessions or chat rooms initially</li>
+                        <li>No dedicated mobile app – Web-only access limits mobile usability</li>
+                        <li>Limited offline functionality – Requires internet connection for all features</li>
+                        <li>Manual grading – Some assignments require manual checking</li>
+                        <li>Scalability concerns – Initial design may struggle with large user volumes</li>
+                        <li>Initial server load concerns – File uploads and video streaming may strain resources</li>
+                        <li>Dependency on third-party APIs – Email, SMS, payment gateways, and AI services</li>
+                        <li>Security and data protection – Requires strong implementation for authentication and transactions</li>
+                        <li>Complex integrations – Multiple external services increase technical complexity</li>
+                        <li>Testing limitations – Limited time may restrict thorough QA of all features</li>
+                        <li>Team experience – Developers may need to learn new tools or APIs (PHP, integrations, AI)</li>
+                        <li>Time and resource constraints – Tight timeline (11 weeks) and potential budget limits for paid APIs</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="opportunities">
+                    <h2><span class="symbol">🌟</span> OPPORTUNITIES <br><small>(External – Market/trends we can use)</small></h2>
+                    <ul>
+                        <li>Growing demand for online education – Ongoing post-pandemic shift to e-learning</li>
+                        <li>Remote and mobile learning trend – Supports the future development of a companion mobile app</li>
+                        <li>Microlearning trend – Can expand into short-form or skill-based courses</li>
+                        <li>Corporate training potential – Adaptable for company-based learning platforms</li>
+                        <li>Gamification – Badges, leaderboards, or certificates to increase engagement</li>
+                        <li>Integration with popular tools – Future links with Google Classroom, Zoom, or Microsoft Teams</li>
+                        <li>AI-driven personalization – Recommend courses based on user behavior and learning patterns</li>
+                        <li>Niche targeting – Specialize in certain subjects or audiences</li>
+                        <li>Partnership opportunities – Collaborate with schools, institutions, or content creators</li>
+                        <li>Blockchain-verified certifications – Enhance e-certificate integrity in the future</li>
+                        <li>Global reach – Internet-based access opens to international learners</li>
+                        <li>API marketplace potential – Partner groups can build on top of your RESTful API</li>
+                        <li>White-label licensing – Sell customized LMS solutions to institutions</li>
+                    </ul>
+                </td>
+                <td class="threats">
+                    <h2><span class="symbol">⚠️</span> THREATS <br><small>(External – Risks and challenges)</small></h2>
+                    <ul>
+                        <li>Strong competition – Platforms like Moodle, Canvas, Udemy, Coursera, and Blackboard dominate the market</li>
+                        <li>Changing tech standards – Must keep up with security, UI, and accessibility requirements</li>
+                        <li>Rapid AI advancement – Current chatbot features may become outdated quickly</li>
+                        <li>Data privacy compliance – Follow GDPR and local data protection laws</li>
+                        <li>API dependency risks – Changes in pricing, functionality, or service downtime can disrupt operations</li>
+                        <li>User adoption challenges – Teachers or students may prefer familiar systems</li>
+                        <li>Technical challenges – Risks of bugs, integration failures, and system downtime</li>
+                        <li>Funding and maintenance costs – Ongoing server, domain, and API subscription expenses</li>
+                        <li>Scope creep – Feature lists may expand beyond the timeline or capacity</li>
+                        <li>Content moderation – Ensuring course quality and authenticity</li>
+                        <li>Payment management complexity – Handling refunds, disputes, or fraudulent transactions</li>
+                        <li>Technical skill gaps – Upgrading features (AI, real-time tools) may exceed current expertise</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Functional Requirements Section -->
+        <div class="fr-header">
+            <h1>FUNCTIONAL REQUIREMENTS - Learning Management System (LMS)</h1>
+        </div>
+
+        <!-- Student Requirements -->
+        <h3 class="mt-4">👨‍🎓 STUDENT FUNCTIONAL REQUIREMENTS</h3>
+        
+        <!-- Authentication & Account Management -->
+        <h5 class="mt-3">Authentication & Account Management</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-S01</td>
+                    <td>Register and log in as student</td>
+                </tr>
+                <tr>
+                    <td>FR-S02</td>
+                    <td>Logout from the system</td>
+                </tr>
+                <tr>
+                    <td>FR-S03</td>
+                    <td>Reset password via email verification</td>
+                </tr>
+                <tr>
+                    <td>FR-S04</td>
+                    <td>Update profile information</td>
+                </tr>
+                <tr>
+                    <td>FR-S05</td>
+                    <td>Change account password</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Course Discovery & Enrollment -->
+        <h5 class="mt-3">Course Discovery & Enrollment</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-S06</td>
+                    <td>Browse the course catalog</td>
+                </tr>
+                <tr>
+                    <td>FR-S07</td>
+                    <td>Search and filter courses</td>
+                </tr>
+                <tr>
+                    <td>FR-S08</td>
+                    <td>View course details</td>
+                </tr>
+                <tr>
+                    <td>FR-S09</td>
+                    <td>View course syllabus/curriculum before enrolling</td>
+                </tr>
+                <tr>
+                    <td>FR-S10</td>
+                    <td>Enroll in courses</td>
+                </tr>
+                <tr>
+                    <td>FR-S11</td>
+                    <td>Unenroll from courses</td>
+                </tr>
+                <tr>
+                    <td>FR-S12</td>
+                    <td>Pay for paid courses</td>
+                </tr>
+                <tr>
+                    <td>FR-S13</td>
+                    <td>View transaction history</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Course Learning & Content Access -->
+        <h5 class="mt-3">Course Learning & Content Access</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-S14</td>
+                    <td>Access enrolled courses</td>
+                </tr>
+                <tr>
+                    <td>FR-S15</td>
+                    <td>Filter/search enrolled courses</td>
+                </tr>
+                <tr>
+                    <td>FR-S16</td>
+                    <td>Watch course videos</td>
+                </tr>
+                <tr>
+                    <td>FR-S17</td>
+                    <td>Resume course from last watched position</td>
+                </tr>
+                <tr>
+                    <td>FR-S18</td>
+                    <td>Download course materials (PDFs, documents)</td>
+                </tr>
+                <tr>
+                    <td>FR-S19</td>
+                    <td>Mark content as complete</td>
+                </tr>
+                <tr>
+                    <td>FR-S20</td>
+                    <td>Track course progress</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Assessments & Assignments -->
+        <h5 class="mt-3">Assessments & Assignments</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-S21</td>
+                    <td>Take quizzes (multiple choice, true/false)</td>
+                </tr>
+                <tr>
+                    <td>FR-S22</td>
+                    <td>View quiz results and feedback</td>
+                </tr>
+                <tr>
+                    <td>FR-S23</td>
+                    <td>Retake quizzes (if allowed by teacher)</td>
+                </tr>
+                <tr>
+                    <td>FR-S24</td>
+                    <td>Submit assignments</td>
+                </tr>
+                <tr>
+                    <td>FR-S25</td>
+                    <td>View assignment feedback from teacher</td>
+                </tr>
+                <tr>
+                    <td>FR-S26</td>
+                    <td>View grades per course</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Communication & Support -->
+        <h5 class="mt-3">Communication & Support</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-S27</td>
+                    <td>Receive system notifications</td>
+                </tr>
+                <tr>
+                    <td>FR-S28</td>
+                    <td>Message teachers</td>
+                </tr>
+                <tr>
+                    <td>FR-S29</td>
+                    <td>Rate and review courses</td>
+                </tr>
+                <tr>
+                    <td>FR-S30</td>
+                    <td>Use help system for asking questions</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Certificates -->
+        <h5 class="mt-3">Certificates</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-S31</td>
+                    <td>Receive certificate upon course completion</td>
+                </tr>
+                <tr>
+                    <td>FR-S32</td>
+                    <td>View and download course certificate</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Teacher Requirements -->
+        <h3 class="mt-5">👨‍🏫 TEACHER FUNCTIONAL REQUIREMENTS</h3>
+        
+        <!-- Authentication & Account Management -->
+        <h5 class="mt-3">Authentication & Account Management</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-T01</td>
+                    <td>Register and log in as instructor/teacher</td>
+                </tr>
+                <tr>
+                    <td>FR-T02</td>
+                    <td>Logout from the system</td>
+                </tr>
+                <tr>
+                    <td>FR-T03</td>
+                    <td>Reset password via email verification</td>
+                </tr>
+                <tr>
+                    <td>FR-T04</td>
+                    <td>Update profile information</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Course Management -->
+        <h5 class="mt-3">Course Management</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-T05</td>
+                    <td>Create new courses</td>
+                </tr>
+                <tr>
+                    <td>FR-T06</td>
+                    <td>Edit courses</td>
+                </tr>
+                <tr>
+                    <td>FR-T07</td>
+                    <td>Delete courses</td>
+                </tr>
+                <tr>
+                    <td>FR-T08</td>
+                    <td>Duplicate existing courses</td>
+                </tr>
+                <tr>
+                    <td>FR-T09</td>
+                    <td>Archive courses</td>
+                </tr>
+                <tr>
+                    <td>FR-T10</td>
+                    <td>Preview course in student view</td>
+                </tr>
+                <tr>
+                    <td>FR-T11</td>
+                    <td>Set course price</td>
+                </tr>
+                <tr>
+                    <td>FR-T12</td>
+                    <td>Set course prerequisites</td>
+                </tr>
+                <tr>
+                    <td>FR-T13</td>
+                    <td>Schedule course availability dates</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Content Management -->
+        <h5 class="mt-3">Content Management</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-T14</td>
+                    <td>Upload course content (videos, documents, presentations)</td>
+                </tr>
+                <tr>
+                    <td>FR-T15</td>
+                    <td>Organize course content into modules or sections</td>
+                </tr>
+                <tr>
+                    <td>FR-T16</td>
+                    <td>Edit uploaded content</td>
+                </tr>
+                <tr>
+                    <td>FR-T17</td>
+                    <td>Delete uploaded content</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Assessment Creation -->
+        <h5 class="mt-3">Assessment Creation</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-T18</td>
+                    <td>Create quizzes (multiple choice, true/false)</td>
+                </tr>
+                <tr>
+                    <td>FR-T19</td>
+                    <td>Set quiz passing score</td>
+                </tr>
+                <tr>
+                    <td>FR-T20</td>
+                    <td>Set quiz time limits</td>
+                </tr>
+                <tr>
+                    <td>FR-T21</td>
+                    <td>Allow/disallow quiz retakes</td>
+                </tr>
+                <tr>
+                    <td>FR-T22</td>
+                    <td>Create assignments</td>
+                </tr>
+                <tr>
+                    <td>FR-T23</td>
+                    <td>Set assignment due dates</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Grading & Feedback -->
+        <h5 class="mt-3">Grading & Feedback</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-T24</td>
+                    <td>View student submissions</td>
+                </tr>
+                <tr>
+                    <td>FR-T25</td>
+                    <td>Download submitted files</td>
+                </tr>
+                <tr>
+                    <td>FR-T26</td>
+                    <td>Grade assignments manually</td>
+                </tr>
+                <tr>
+                    <td>FR-T27</td>
+                    <td>Provide feedback on student submissions</td>
+                </tr>
+                <tr>
+                    <td>FR-T28</td>
+                    <td>View quiz performance reports</td>
+                </tr>
+                <tr>
+                    <td>FR-T29</td>
+                    <td>View student quiz attempts</td>
+                </tr>
+                <tr>
+                    <td>FR-T30</td>
+                    <td>Export student grades to spreadsheet</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Student Management -->
+        <h5 class="mt-3">Student Management</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-T31</td>
+                    <td>View enrolled students list</td>
+                </tr>
+                <tr>
+                    <td>FR-T32</td>
+                    <td>Track student progress</td>
+                </tr>
+                <tr>
+                    <td>FR-T33</td>
+                    <td>Import students to course via CSV</td>
+                </tr>
+                <tr>
+                    <td>FR-T34</td>
+                    <td>Approve/decline course enrollment requests</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Communication & Analytics -->
+        <h5 class="mt-3">Communication & Analytics</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-T35</td>
+                    <td>Send announcements to students</td>
+                </tr>
+                <tr>
+                    <td>FR-T36</td>
+                    <td>Message students</td>
+                </tr>
+                <tr>
+                    <td>FR-T37</td>
+                    <td>Reply to student messages</td>
+                </tr>
+                <tr>
+                    <td>FR-T38</td>
+                    <td>View course enrollment reports</td>
+                </tr>
+                <tr>
+                    <td>FR-T39</td>
+                    <td>View course completion reports</td>
+                </tr>
+                <tr>
+                    <td>FR-T40</td>
+                    <td>View student course feedback</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Financial Management -->
+        <h5 class="mt-3">Financial Management</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-T41</td>
+                    <td>View course earnings</td>
+                </tr>
+                <tr>
+                    <td>FR-T42</td>
+                    <td>View payout history</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Admin Requirements -->
+        <h3 class="mt-5">👨‍💼 ADMIN FUNCTIONAL REQUIREMENTS</h3>
+        
+        <!-- Authentication & Dashboard -->
+        <h5 class="mt-3">Authentication & Dashboard</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-A01</td>
+                    <td>Log in to the admin panel</td>
+                </tr>
+                <tr>
+                    <td>FR-A02</td>
+                    <td>Logout from the system</td>
+                </tr>
+                <tr>
+                    <td>FR-A03</td>
+                    <td>Reset admin password</td>
+                </tr>
+                <tr>
+                    <td>FR-A04</td>
+                    <td>View admin dashboard with system statistics</td>
+                </tr>
+                <tr>
+                    <td>FR-A05</td>
+                    <td>View platform usage statistics</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Admin Account Management -->
+        <h5 class="mt-3">Admin Account Management</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-A06</td>
+                    <td>Create new admin accounts</td>
+                </tr>
+                <tr>
+                    <td>FR-A07</td>
+                    <td>Edit admin accounts</td>
+                </tr>
+                <tr>
+                    <td>FR-A08</td>
+                    <td>Delete admin accounts</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- User Management - Students -->
+        <h5 class="mt-3">User Management - Students</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-A09</td>
+                    <td>View all students</td>
+                </tr>
+                <tr>
+                    <td>FR-A10</td>
+                    <td>Activate and deactivate student accounts</td>
+                </tr>
+                <tr>
+                    <td>FR-A11</td>
+                    <td>Suspend students temporarily</td>
+                </tr>
+                <tr>
+                    <td>FR-A12</td>
+                    <td>Delete student accounts</td>
+                </tr>
+                <tr>
+                    <td>FR-A13</td>
+                    <td>Reset student passwords</td>
+                </tr>
+                <tr>
+                    <td>FR-A14</td>
+                    <td>Update student information</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- User Management - Teachers -->
+        <h5 class="mt-3">User Management - Teachers</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-A15</td>
+                    <td>View all teachers</td>
+                </tr>
+                <tr>
+                    <td>FR-A16</td>
+                    <td>Activate and deactivate teacher accounts</td>
+                </tr>
+                <tr>
+                    <td>FR-A17</td>
+                    <td>Suspend teachers temporarily</td>
+                </tr>
+                <tr>
+                    <td>FR-A18</td>
+                    <td>Delete teacher accounts</td>
+                </tr>
+                <tr>
+                    <td>FR-A19</td>
+                    <td>Reset teacher passwords</td>
+                </tr>
+                <tr>
+                    <td>FR-A20</td>
+                    <td>Update teacher information</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Course Management -->
+        <h5 class="mt-3">Course Management</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-A21</td>
+                    <td>View all courses</td>
+                </tr>
+                <tr>
+                    <td>FR-A22</td>
+                    <td>Approve or reject courses</td>
+                </tr>
+                <tr>
+                    <td>FR-A23</td>
+                    <td>Feature courses on homepage</td>
+                </tr>
+                <tr>
+                    <td>FR-A24</td>
+                    <td>Delete courses</td>
+                </tr>
+                <tr>
+                    <td>FR-A25</td>
+                    <td>Edit course details</td>
+                </tr>
+                <tr>
+                    <td>FR-A26</td>
+                    <td>Manage course categories</td>
+                </tr>
+                <tr>
+                    <td>FR-A27</td>
+                    <td>Configure course approval settings</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Financial Management -->
+        <h5 class="mt-3">Financial Management</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-A28</td>
+                    <td>View all transactions</td>
+                </tr>
+                <tr>
+                    <td>FR-A29</td>
+                    <td>Manage payment records</td>
+                </tr>
+                <tr>
+                    <td>FR-A30</td>
+                    <td>Process refunds</td>
+                </tr>
+                <tr>
+                    <td>FR-A31</td>
+                    <td>View and resolve payment disputes</td>
+                </tr>
+                <tr>
+                    <td>FR-A32</td>
+                    <td>Set platform commission rates</td>
+                </tr>
+                <tr>
+                    <td>FR-A33</td>
+                    <td>View teacher payout history</td>
+                </tr>
+                <tr>
+                    <td>FR-A34</td>
+                    <td>Process teacher payouts</td>
+                </tr>
+                <tr>
+                    <td>FR-A35</td>
+                    <td>Configure refund policies</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Reporting & Analytics -->
+        <h5 class="mt-3">Reporting & Analytics</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-A36</td>
+                    <td>Generate user statistics reports</td>
+                </tr>
+                <tr>
+                    <td>FR-A37</td>
+                    <td>Generate course statistics reports</td>
+                </tr>
+                <tr>
+                    <td>FR-A38</td>
+                    <td>Generate revenue reports</td>
+                </tr>
+                <tr>
+                    <td>FR-A39</td>
+                    <td>Generate enrollment reports</td>
+                </tr>
+                <tr>
+                    <td>FR-A40</td>
+                    <td>Export reports to multiple formats</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- System Configuration -->
+        <h5 class="mt-3">System Configuration</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-A41</td>
+                    <td>Configure system settings</td>
+                </tr>
+                <tr>
+                    <td>FR-A42</td>
+                    <td>Configure payment integration settings</td>
+                </tr>
+                <tr>
+                    <td>FR-A43</td>
+                    <td>Configure help system settings</td>
+                </tr>
+                <tr>
+                    <td>FR-A44</td>
+                    <td>Manage notification templates</td>
+                </tr>
+                <tr>
+                    <td>FR-A45</td>
+                    <td>Manage system-wide notifications</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Communication & Moderation -->
+        <h5 class="mt-3">Communication & Moderation</h5>
+        <table class="table table-bordered table-striped fr-table">
+            <thead>
+                <tr>
+                    <th width="20%">ID</th>
+                    <th>Functional Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>FR-A46</td>
+                    <td>Send system-wide announcements</td>
+                </tr>
+                <tr>
+                    <td>FR-A47</td>
+                    <td>Moderate reviews and comments</td>
+                </tr>
+                <tr>
+                    <td>FR-A48</td>
+                    <td>View system activity logs</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Summary Section -->
+        <div class="fr-summary">
+            <h4>📊 SUMMARY</h4>
+            <table class="table summary-table">
+                <thead>
+                    <tr>
+                        <th>User Role</th>
+                        <th>Total Functional Requirements</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Student</td>
+                        <td>32 requirements</td>
+                    </tr>
+                    <tr>
+                        <td>Teacher</td>
+                        <td>42 requirements</td>
+                    </tr>
+                    <tr>
+                        <td>Admin</td>
+                        <td>48 requirements</td>
+                    </tr>
+                    <tr class="table-active">
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>122 functional requirements</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p><strong>Prepared by:</strong> Angelica</p>
+            <p><strong>Project:</strong> Learning Management System (LMS)</p>
+            <p><strong>Date:</strong> December 2025</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
